@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<button onclick="document.getElementById('background-music').play()">Play</button>
+<button onclick="document.getElementById('background-music').pause()">Pause/play</button>
+<input type="range" min="0" max="1" step="0.1" value="0.5" onchange="document.getElementById('background-music').volume = this.value">
+
+
+	<body>
+		<audio id="background-music" autoplay loop>
+			<source src="music/Dil tu.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+	
+		<script>
+			// Optional: Control playback using JavaScript
+			const music = document.getElementById('background-music');
+			music.volume = 0.5; // Set volume (0.0 - 1.0)
+		</script>
+	</body>
+
+
+<script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>This one is for vaishnavi </title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*WHAT I CAN'T SAY MY CODE WILL SAY A DAY YOU SEE IT IN YOUR GITHUB,PLEASE DONT BE ANGRY ..!!</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			Hey Girl !<br />
+			Do you remember the day we first met?<br />
+			<span class="comments">// At The latur. </span><br />
+			firstly i was unable to know more about you;<br />
+			<span class="comments">// eventually i didnt remember that we have talk on that days...</span><br />
+			but,!;<br />
+			After that, mahity nahi we have lost it..!;<br />
+			But by the grace of got I have found my Girl again as we start talking again what ever the reason is to be;<br />
+			Actually the real journy for both of us begines from there only<br />
+			I know it take a long time for us we havent spend times with each other..but the time we have spended on calls that was to be the most beautiful part of my life<br />
+			we have fight a lots of time but there is an invisible thread between us which saves us every time by getting away from each other ;<br />
+			<span class="comments">// And now you means A lot to me ..!</span><br />
+			hopeing it..;<br />
+			<br>
+			We Should Have atleast a together pic...?!...
+			<br>
+			All I want to say is:<br />
+			vaishnavi, your my favourate person;<br />
+			<br>
+			<br>
+			<br />
+			<br>
+			<span id="heartspan">
+			<a href="WhatsApp Image 2024-08-16 at 13.39.50_afc31cf4.jpg"><i class="fas fa-heart" id="icon"></i></a>
+			</span>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					 We are Together since..!
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					I am sorry..!<br/>
+					<div class="signature">- ABHISHEK</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2020, 10, 5);
+together.setHours(16);
+together.setMinutes(30);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+</body>
+</html>
