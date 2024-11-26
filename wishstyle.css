@@ -1,4 +1,4 @@
-/* style.css */
+/* General Body Styling */
 body {
     margin: 0;
     padding: 0;
@@ -9,9 +9,45 @@ body {
     align-items: center;
     min-height: 100vh;
     color: #333;
-  }
-  
-  .wish-container {
+    position: relative;
+}
+
+/* Happy Birthday Background */
+.birthday-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 154, 158, 0.8), rgba(250, 208, 196, 0.8));
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.birthday-bg h1 {
+    font-size: 4rem;
+    color: #e91e63;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    text-align: center;
+    animation: float 3s infinite ease-in-out;
+}
+
+/* Floating Animation for Text */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Wish Container */
+.wish-container {
     background: #fff;
     padding: 20px 30px;
     border-radius: 10px;
@@ -19,32 +55,37 @@ body {
     text-align: center;
     width: 90%;
     max-width: 400px;
-  }
-  
-  h1 {
+    z-index: 1; /* Ensures it appears above the background */
+    position: relative;
+}
+
+/* Heading and Paragraph Styling */
+h1 {
     font-size: 2rem;
     color: #e91e63;
-  }
-  
-  p {
+}
+
+p {
     margin: 10px 0;
     color: #555;
-  }
-  
-  form {
+}
+
+/* Form Styling */
+form {
     margin: 20px 0;
-  }
-  
-  textarea {
+}
+
+textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
     resize: none;
-  }
-  
-  button {
+}
+
+/* Button Styling */
+button {
     margin-top: 10px;
     padding: 10px 20px;
     background: #e91e63;
@@ -54,28 +95,29 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background: #c2185b;
-  }
-  
-  .wish-display {
+}
+
+/* Displaying Submitted Wishes */
+.wish-display {
     margin-top: 20px;
     text-align: left;
-  }
-  
-  .wish-display h2 {
+}
+
+.wish-display h2 {
     color: #333;
     margin-bottom: 10px;
-  }
-  
-  #wish-list {
+}
+
+#wish-list {
     list-style: none;
     padding: 0;
-  }
-  
-  #wish-list li {
+}
+
+#wish-list li {
     background: #f8f9fa;
     margin: 10px 0;
     padding: 10px;
@@ -83,5 +125,6 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 1rem;
     color: #555;
-  }
+}
+
   
