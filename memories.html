@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <html xmlns="http://www.w3.org/1999/xhtml">
+	 <link href="your wish.html"
+<head>
+	<button onclick="document.getElementById('background-music').play()">PLAY THE SONG</button>
+<button onclick="document.getElementById('background-music').pause()">PAUSE THE SONG</button>
+<input type="range" min="0" max="1" step="0.1" value="0.5" onchange="document.getElementById('background-music').volume = this.value">
+
+	<body>
+		<audio id="background-music" autoplay loop>
+			<source src="Dil tu.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+	
+		<script>
+			// Optional: Control playback using JavaScript
+			const music = document.getElementById('background-music');
+			music.volume = 0.5; // Set volume (0.0 - 1.0)
+		</script>
+	</body>
+
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Album</title>
   <link rel="stylesheet" href="memoriesstyle.css">
 </head>
 <body>
