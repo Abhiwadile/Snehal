@@ -5,7 +5,7 @@ const wishList = document.getElementById('wish-list');
 const whatsappButton = document.getElementById('whatsapp-button');
 
 // Replace with your phone number in the format 'country code + phone number' (e.g., 919876543210 for India)
-const whatsappNumber = '8208007095';
+const whatsappNumber = '918208007095';
 
 wishForm.addEventListener('submit', (event) => {
   event.preventDefault();
