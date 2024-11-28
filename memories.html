@@ -1,25 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <html xmlns="http://www.w3.org/1999/xhtml">
-	 <link href="your wish.html"
-<head>
-	<button onclick="document.getElementById('background-music').play()">PLAY THE SONG</button>
-<button onclick="document.getElementById('background-music').pause()">PAUSE THE SONG</button>
-<input type="range" min="0" max="1" step="0.1" value="0.5" onchange="document.getElementById('background-music').volume = this.value">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Music</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            background: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #c2185b;
+        }
+        input[type="range"] {
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Background Music Player</h1>
+    <p>Control the background music for the page!</p>
 
-	<body>
-		<audio id="background-music" autoplay loop>
-			<source src="Zar.mp3" type="audio/mpeg">
-			Your browser does not support the audio element.
-		</audio>
-	
-		<script>
-			// Optional: Control playback using JavaScript
-			const music = document.getElementById('background-music');
-			music.volume = 0.5; // Set volume (0.0 - 1.0)
-		</script>
-	</body>
+    <!-- Controls for Music -->
+    <button onclick="playMusic()">Play the Song</button>
+    <button onclick="pauseMusic()">Pause the Song</button>
+    <br>
+    <label for="volume-control">Adjust Volume:</label>
+    <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5" onchange="adjustVolume(this.value)">
+
+    <!-- Background Music -->
+    <audio id="background-music" loop>
+        <source src="Zar.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Get the audio element
+        const music = document.getElementById('background-music');
+
+        // Play music
+        function playMusic() {
+            music.play();
+        }
+
+        // Pause music
+        function pauseMusic() {
+            music.pause();
+        }
+
+        // Adjust volume
+        function adjustVolume(volume) {
+            music.volume = volume;
+        }
+
+        // Set default volume on load
+        music.volume = 0.5;
+    </script>
+</body>
+</html>
 
 
   <meta charset="UTF-8">
