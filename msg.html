@@ -3,6 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday with Music</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            color: #333;
+        }
+
+        /* Music controls */
+        .music-controls {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            background: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c2185b;
+        }
+
+        input[type="range"] {
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        /* Content styles */
+        .album-container {
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #e91e63;
+        }
+
+        p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        .photo-album {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .photo img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Modal for enlarged view */
+        #modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        #modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        #close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Music Controls -->
+    <div class="music-controls">
+        <p>Control the background music for the page!</p>
+        <button onclick="playMusic()">Play the Song</button>
+        <button onclick="pauseMusic()">Pause the Song</button>
+        <br>
+        <label for="volume-control">Adjust Volume:</label>
+        <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5" onchange="adjustVolume(this.value)">
+    </div>
+
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
+        <source src="zaroor.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Music control script
+        const music = document.getElementById('background-music');
+
+        function playMusic() {
+            music.play();
+        }
+
+        function pauseMusic() {
+            music.pause();
+        }
+
+        function adjustVolume(volume) {
+            music.volume = volume;
+        }
+
+        // Set default volume
+        music.volume = 0.5;
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Message and Her Response</title>
     <link rel="stylesheet" href="msgstyle.css">
 </head>
