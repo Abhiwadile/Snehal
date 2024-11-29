@@ -34,13 +34,14 @@ p {
 }
 
 .photo-album {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
+    display: block; /* Changed from grid to block for vertical layout */
     margin-bottom: 20px;
 }
 
 .photo {
+    margin: 10px 0; /* Space between images vertically */
+    display: flex;
+    justify-content: center; /* Center align each image */
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -60,7 +61,6 @@ p {
     transform: scale(1.15); /* Increased hover scale for emphasis */
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3); /* Enhanced hover shadow */
 }
-
 
 #add-photo-form {
     margin-top: 20px;
