@@ -1,6 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday with Music</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            color: #333;
+        }
+
+        /* Music controls */
+        .music-controls {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            background: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c2185b;
+        }
+
+        input[type="range"] {
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        /* Content styles */
+        .message-container {
+            margin-top: 20px;
+        }
+
+        h1, h2 {
+            color: #e91e63;
+        }
+
+        p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        textarea {
+            width: 80%;
+            max-width: 500px;
+            height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background: #388e3c;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #c2185b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Music Controls -->
+    <div class="music-controls">
+        <p>Control the background music for the page!</p>
+        <button onclick="playMusic()">Play the Song</button>
+        <button onclick="pauseMusic()">Pause the Song</button>
+        <br>
+        <label for="volume-control">Adjust Volume:</label>
+        <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5" onchange="adjustVolume(this.value)">
+    </div>
+
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
+        <source src="khoiya.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Music control script
+        const music = document.getElementById('background-music');
+
+        function playMusic() {
+            music.play();
+        }
+
+        function pauseMusic() {
+            music.pause();
+        }
+
+        function adjustVolume(volume) {
+            music.volume = volume;
+        }
+
+        // Set default volume
+        music.volume = 0.5;
+    </script>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Birthday Album</title>
