@@ -1,15 +1,19 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+	 <link href="your wish.html"
+<head>
+	<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Dear Snehal</title>
+    <title>Background Music</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            text-align: center;
             margin: 0;
             padding: 20px;
-            text-align: center;
             background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
             color: #333;
         }
@@ -30,155 +34,151 @@
             margin: 10px;
             cursor: pointer;
         }
-        #heartspan {
-            margin-top: 20px;
-        }
-        #icon {
-            font-size: 50px;
-            color: #e91e63;
-            cursor: pointer;
-        }
-        #icon:hover {
-            color: #c2185b;
-        }
-        #loveHeart {
-            position: relative;
-            margin: 20px auto;
-            width: 400px;
-            height: 400px;
-        }
-        #garden {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        #words {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            font-size: 24px;
-            z-index: 2;
-            text-align: center;
-        }
-        #content {
-            margin-top: 30px;
-        }
-        h1 {
-            font-style: italic;
-        }
-        .small-heart {
-            font-size: 30px;
-            color: red;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
-    <!-- Music Player Section -->
-    <h1>WISHING YOU THE HAPPIEST BIRTHDAY SNEHAL 🎂♡</h1>
     <p>Control the background music for the page!</p>
+
+    <!-- Controls for Music -->
     <button onclick="playMusic()">Play the Song</button>
     <button onclick="pauseMusic()">Pause the Song</button>
     <br>
     <label for="volume-control">Adjust Volume:</label>
     <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5" onchange="adjustVolume(this.value)">
-    <audio id="background-music" autoplay loop>
-        <source src="Dil tu.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
 
-    <!-- Heart Section -->
-    <div id="loveHeart">
-        <canvas id="garden"></canvas>
-        <div id="words">
-            <div id="messages">WISHING YOU THE HAPPIEST BIRTHDAY 🎂</div>
-            <div id="elapseClock"></div>
-            <div id="loveu">Always LVU ♡</div>
-        </div>
-    </div>
 
-    <!-- Bottom Content -->
-    <div id="content">
-        <h3>Hey Snehal,</h3>
-        <p>
-            I have created this project for you in just 3 hours. Please use headphones to enjoy it fully!<br>
-            <strong>Note:</strong> As you move to the next page, you won't be able to return. Be careful!
-        </p>
-        <h3>
-            It's your 21st birthday! <br>
-            I'm wishing you a <strong>HAPPY BIRTHDAY</strong>, dear! <br>
-            Remember, you're capable of making the right decisions for yourself. Don't worry about your job; things will work out as long as you keep putting in your efforts.
-        </h3>
-        <p>
-            Snehal, this is the 4th birthday we're celebrating together. I'm sorry for my rude behavior and anger sometimes. 
-            The truth is, I can't afford to lose someone like you—you're my Google, always giving me the answers to my problems.
-        </p>
-        <p>
-            You're always my priority, no matter where I stand on your list. At the end of the day, you're my person.
-        </p>
-        <h3>
-            All I want to say is:<br>
-            You're loved from the bottom of my heart! <br>
-            Click on the heart above to proceed!
-        </h3>
-    </div>
+                  <h1 style="font-style: italic;">WISHING YOU THE HAPPIEST BIRTHDAY SNEHAL 🎂♡</h1>
 
-    <!-- Small Red Heart -->
-    <div class="small-heart">❤️</div>
-
-    <script>
+	<body>
+		<audio id="background-music" autoplay loop>
+			<source src="Dil tu.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+	
+	 <script>
+        // Get the audio element
         const music = document.getElementById('background-music');
 
+        // Play music
         function playMusic() {
             music.play();
         }
 
+        // Pause music
         function pauseMusic() {
             music.pause();
         }
 
+        // Adjust volume
         function adjustVolume(volume) {
             music.volume = volume;
         }
 
+        // Set default volume on load
         music.volume = 0.5;
-
-        // Heart Animation
-        const offsetX = document.getElementById('loveHeart').offsetWidth / 2;
-        const offsetY = document.getElementById('loveHeart').offsetHeight / 2 - 55;
-        const together = new Date(2020, 9, 5, 16, 30, 0);
-
-        function startHeartAnimation() {
-            // Insert heart animation logic here
-        }
-
-        function timeElapse(together) {
-            const now = new Date();
-            const time = (now - together) / 1000;
-            const days = Math.floor(time / (3600 * 24));
-            const hours = Math.floor((time % (3600 * 24)) / 3600);
-            const minutes = Math.floor((time % 3600) / 60);
-            const seconds = Math.floor(time % 60);
-
-            const elapseClock = document.getElementById('elapseClock');
-            elapseClock.innerHTML = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
-        }
-
-        if (!document.createElement('canvas').getContext) {
-            alert("Your browser doesn't support HTML5. Please use Chrome, Firefox, or Safari.");
-        } else {
-            setTimeout(() => startHeartAnimation(), 5000);
-            timeElapse(together);
-            setInterval(() => timeElapse(together), 500);
-        }
     </script>
+	</body>
 
-    <script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
+
+<script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Happy Birthday DEAR</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+<link href="default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="garden.js"></script>
+<script type="text/javascript" src="functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments"></span><br />
+			<span class="space"/><span class="comments"><h3>Hey Snehal I have created this beautiful projest for you,i have required only 3 hrs,please use headphones as I have used my everything to create it ,
+			, so i wish you will enjoy it...!</h3></span><br />
+			<span class="space"/><span class="comments"></span><br />
+			<h3>Snehu Read the thing properly as you go on the next page you are not able to come back on previous page be careful...!<br />
+			Now Its To be your 21th birthday firstly wishing u a HAPPY BIRTHDAY DEAR</h3><br />
+			<span class="comments"> I Hope u have open this link propeerly..! </span><br />
+			<h3>Now finally you are grown up.. you are capable taking right desigen for your self<br />
+			<span class="comments">Don't get much worry about job every thing will be fine. just put your efforts and you will get the results properly..</span><br />
+			</h3><br />
+			<h3>Snehal this to your 4th brd which we are celebrating <br />
+			Firstly i am sorry for my rude behavours and angryness the thing is when it comes to you then only i get angry <br />
+			the mainthing is I want want to loose a girl like you you are my GOOGLE I get answer of my every problems here only <br />
+		        I know me tuziya prority list madhey kuthey nasel pn but the ultimate thing is that tu mazi priority ah mala nahi lamb karat yet tula kete khai zhal tari..<br />
+			<span class="comments">Itya divas lamb rahiycha try pn kela pn nahi hoat tu end of my day partner ah and yes you always be my that person </span><br />
+			please dont let me go from my GOOGLE  <br />
+			<br>
+			We Should Have atleast a together pic...?!...and yes its still on wating i didnt have it to upload it here !
+			<br>
+			All I want to say is:<br />
+			your always loved by bottom of my HEART ....... Click On that heart now...;<br />
+			</h3><br>
+			<br>
+				 <link href="index.html">
+			<br />
+			<br>
+			<span id="heartspan">
+			<a href="your wish.html"><i class="fas fa-heart" id="icon"></i></a>
+			</span>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages"><div> WISSHING YOU HAPPIEST BIRTHDAY  🎂 </div>
+					 We Know Each Other Since!.........
+					<div id="elapseClock"></div>
+				<div id="loveu"> Always LVU ♡ !<br/>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2020, 10, 5);
+together.setHours(16);
+together.setMinutes(30);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
 </body>
-</html>
+</html>  
 
