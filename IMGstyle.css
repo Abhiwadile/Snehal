@@ -33,8 +33,9 @@ p {
     margin-bottom: 20px;
 }
 
+/* Changed to block layout for vertical stacking */
 .photo-album {
-    display: block; /* Changed from grid to block for vertical layout */
+    display: block; /* Makes images stack vertically */
     margin-bottom: 20px;
 }
 
@@ -48,6 +49,7 @@ p {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Increased image size and set transition for hover */
 .photo img {
     width: 180px; /* Increased size from 150px */
     height: 180px; /* Increased size from 150px */
@@ -62,40 +64,36 @@ p {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3); /* Enhanced hover shadow */
 }
 
-#add-photo-form {
+/* Styling for the surprise message and button */
+.surprise-btn {
     margin-top: 20px;
-}
-
-#add-photo-form h2 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-#add-photo-form input {
-    width: 80%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-#add-photo-form button {
     padding: 10px 20px;
     font-size: 1rem;
     background: #e91e63;
-    color: white;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
 }
 
-#add-photo-form button:hover {
+.surprise-btn:hover {
     background: #c2185b;
 }
 
+#surprise-message {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #333;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+#surprise-message.visible {
+    opacity: 1;
+}
+
+/* Modal styles */
 #modal {
     position: fixed;
     top: 0;
