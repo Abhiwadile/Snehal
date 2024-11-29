@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart with Message</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: black;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .heart-container {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px; /* Space between heart and message */
+      margin-right: 50px; /* Shift the heart to the left */
+    }
+
+    .heart {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      transform: rotate(-45deg);
+      animation: pulse 2s infinite;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-radius: 50%;
+      top: -100px;
+      left: 0;
+    }
+
+    .heart:after {
+      top: 0;
+      left: 100px;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: scale(1.1) rotate(-45deg);
+      }
+    }
+
+    button {
+      position: absolute;
+      bottom: 20px;
+      padding: 10px 20px;
+      background: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background: #c2185b;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heart-container">
+    <div class="heart"></div>
+  </div>
+
+  <h2>I am so blessed to have you in my life</h2>
+  <h2>Thank you so much</h2>
+
+  <button onclick="toggleMusic()">Play/Pause Music</button>
+
+  <audio id="background-music" loop>
+    <source src="Zar.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const music = document.getElementById('background-music');
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+  </script>
+</body>
+</html>
