@@ -1,14 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Music</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            background: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #c2185b;
+        }
+        input[type="range"] {
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>Control the background music for the page!</p>
+
+    <!-- Controls for Music -->
+    <button onclick="playMusic()">Play the Song</button>
+    <button onclick="pauseMusic()">Pause the Song</button>
+    <br>
+    <label for="volume-control">Adjust Volume:</label>
+    <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5" onchange="adjustVolume(this.value)">
+
+
+
+	<body>
+		<audio id="background-music" autoplay loop>
+			<source src="zaroor.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+	
+	 <script>
+        // Get the audio element
+        const music = document.getElementById('background-music');
+
+        // Play music
+        function playMusic() {
+            music.play();
+        }
+
+        // Pause music
+        function pauseMusic() {
+            music.pause();
+        }
+
+        // Adjust volume
+        function adjustVolume(volume) {
+            music.volume = volume;
+        }
+
+        // Set default volume on load
+        music.volume = 0.5;
+    </script>
+	</body>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Album</title>
     <link rel="stylesheet" href="IMGstyle.css">
-<audio id="background-music" autoplay loop>
-  <source src="https://github.com/Abhiwadile/Snehal/blob/main/zar.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+
 
 </head>
 <body>
